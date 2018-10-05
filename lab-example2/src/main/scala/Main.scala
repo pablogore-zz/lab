@@ -63,8 +63,6 @@ object Main {
 
     println( root    )
 
-    val sum = root.fold(0.0)(_ + _)
-    print(sum)
   }
 
 

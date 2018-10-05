@@ -5,7 +5,7 @@
 lazy val lab =
   project
     .in(file("."))
-    .aggregate(`lab-example1`,`lab-example2`)
+    .aggregate(`lab-example1`,`lab-example2`,`lab-example4`)
     .settings(settings)
     .settings(
       unmanagedSourceDirectories.in(Compile) := Seq.empty,
@@ -29,6 +29,17 @@ lazy val `lab-example2` =
       )
     )
 
+lazy val `lab-example4` =
+  project
+    .settings(settings)
+    .settings(
+      libraryDependencies ++= Seq(
+        library.akkaActor,
+        library.ning,
+        library.jsoup,
+      )
+    )
+
 // *****************************************************************************
 // Library dependencies
 // *****************************************************************************
@@ -37,6 +48,9 @@ lazy val library =
   new {
     object Version {
       val akka                     = "2.4.17"
+      val ning                     = "1.9.40"
+      val jsoup                    = "1.8.3"
+
       val akkaHttp                 = "10.0.3"
       val akkaHttpJson             = "1.12.0"
       val akkaLog4j                = "1.3.0"
@@ -50,6 +64,11 @@ lazy val library =
       val scala                    = "2.12.1"
       val scalaTest                = "3.0.1"
     }
+
+    val akkaActor                  = "com.typesafe.akka"        %% "akka-actor"                   % Version.akka
+    val ning                      =  "com.ning"                 % "async-http-client"             % Version.ning
+    val jsoup                      = "org.jsoup"                % "jsoup"                         % Version.jsoup
+
     val akkaClusterSharding        = "com.typesafe.akka"        %% "akka-cluster-sharding"        % Version.akka
     val akkaClusterTools           = "com.typesafe.akka"        %% "akka-cluster-tools"           % Version.akka
     val akkaHttp                   = "com.typesafe.akka"        %% "akka-http"                    % Version.akkaHttp
@@ -96,5 +115,7 @@ lazy val commonSettings =
       "-target", "1.8"
     ),
     unmanagedSourceDirectories.in(Compile) := Seq(scalaSource.in(Compile).value),
-    unmanagedSourceDirectories.in(Test) := Seq(scalaSource.in(Test).value)
+    unmanagedSourceDirectories.in(Test) := Seq(scalaSource.in(Test).value),
+    resolvers += "Akka Snapshot Repository" at "http://repo.akka.io/snapshots/",
+    resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
   )
