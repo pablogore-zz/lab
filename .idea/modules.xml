@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab.iml" filepath="$PROJECT_DIR$/.idea/modules/lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-build.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-example1.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-example1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-example1-build.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-example1-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-example2.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-example2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-example2-build.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-example2-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-example4.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-example4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-example4-build.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-example4-build.iml" />
+    </modules>
+  </component>
+</project>
